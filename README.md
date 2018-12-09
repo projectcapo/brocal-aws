@@ -1,25 +1,41 @@
 # brocal
 
-## Overview:
+## Overview
 
  - Simple application using the following frameworks: HTML, CSS (Materialize), JS and MySQL database for the front end.
  - The application uses Node.js (and node modules), Express.js and Express-handlebars. The Node modules used were the following: authentication – Passport.js. In addition, we used ORM – Sequelize and finally, we used several API’s, which are the following: Nutritionix, myfitnesspal, GET/READ/POST/DELETE.
 - - -
 
-## App Details:
+## App Details
 
 - BroCal is a fitness application that allows users to input and track information such as weight, food, fitness, etc.
 - User will be able to register an account login with username and password.
 
-## AWS Details
+## AWS Details & Setup
 
 This project was ported to run seamless on AWS, inspired by AWS modern Application workshop.  
 
 [https://github.com/aws-samples/aws-modern-application-workshop](https://github.com/aws-samples/aws-modern-application-workshop "Modern Application Workshop")
 
+### Setup 
+
+1. Setup Core infra (Cloudformation)
+
+```bash
+aws cloudformation create-stack --stack-name BrocalCoreStack --capabilities CAPABILITY_NAMED_IAM --template-body file://$PWD/core.yml
+```
+
+You verify stack progress
+
+```bash
+aws cloudformation describe-stacks --stack-name BrocalCoreStack
+```
+
+
+
 - - -
 
-## App Functionality Overview 
+## App Functionality Overview
 
 Account creation (POST – Database)
 
